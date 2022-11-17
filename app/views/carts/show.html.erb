@@ -3,6 +3,9 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
+    <% if enhanced_cart.empty? %>
+      <div class="alert alert-danger" role="alert">Your cart is empty, please head back to: <% link_to 'Home', :root %>
+    <% else %>
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
