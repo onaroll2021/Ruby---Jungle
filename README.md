@@ -4,6 +4,8 @@ A mini e-commerce application built with Rails 6.1 for purposes of teaching Rail
 
 ## Demo 
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/106492401/203671659-444ab60c-bb91-461a-9fa0-2a324cfe1372.gif)
+
 ## Setup
 
 1. Run `bundle install` to install dependencies
