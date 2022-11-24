@@ -31,14 +31,14 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_subtotal_cents,
-      description: "Khurram Virani's Jungle Order",
+      description: if session[:user_id] then "#{User.find_by_id(session[:user_id])[:email]}'s Jungle Order" else "Jungle Order" end,
       currency:    'cad'
     )
   end
 
   def create_order(stripe_charge)
     order = Order.new(
-      email: params[:stripeEmail],
+      email: if session[:user_id] then User.find_by_id(session[:user_id])[:email] else nil end,
       total_cents: cart_subtotal_cents,
       stripe_charge_id: stripe_charge.id, # returned by stripe
     )
